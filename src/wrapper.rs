@@ -394,7 +394,7 @@ impl Span {
         }
     }
 
-    #[cfg(super_unstable)]
+    #[cfg(hygiene)]
     pub fn resolved_at(&self, other: Span) -> Span {
         match (self, other) {
             (Span::Compiler(a), Span::Compiler(b)) => Span::Compiler(a.resolved_at(b)),
@@ -403,7 +403,7 @@ impl Span {
         }
     }
 
-    #[cfg(super_unstable)]
+    #[cfg(hygiene)]
     pub fn located_at(&self, other: Span) -> Span {
         match (self, other) {
             (Span::Compiler(a), Span::Compiler(b)) => Span::Compiler(a.located_at(b)),

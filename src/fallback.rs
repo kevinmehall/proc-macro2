@@ -384,7 +384,7 @@ impl Span {
         Span::call_site()
     }
 
-    #[cfg(procmacro2_semver_exempt)]
+    #[cfg(hygiene)]
     pub fn resolved_at(&self, _other: Span) -> Span {
         // Stable spans consist only of line/column information, so
         // `resolved_at` and `located_at` only select which span the
@@ -392,7 +392,7 @@ impl Span {
         *self
     }
 
-    #[cfg(procmacro2_semver_exempt)]
+    #[cfg(hygiene)]
     pub fn located_at(&self, other: Span) -> Span {
         other
     }

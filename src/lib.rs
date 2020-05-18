@@ -371,8 +371,8 @@ impl Span {
     /// Creates a new span with the same line/column information as `self` but
     /// that resolves symbols as though it were at `other`.
     ///
-    /// This method is semver exempt and not exposed by default.
-    #[cfg(procmacro2_semver_exempt)]
+    /// This method requires the `"hygiene"` feature to be enabled.
+    #[cfg(hygiene)]
     pub fn resolved_at(&self, other: Span) -> Span {
         Span::_new(self.inner.resolved_at(other.inner))
     }
@@ -380,8 +380,8 @@ impl Span {
     /// Creates a new span with the same name resolution behavior as `self` but
     /// with the line/column information of `other`.
     ///
-    /// This method is semver exempt and not exposed by default.
-    #[cfg(procmacro2_semver_exempt)]
+    /// This method requires the `"hygiene"` feature to be enabled.
+    #[cfg(hygiene)]
     pub fn located_at(&self, other: Span) -> Span {
         Span::_new(self.inner.located_at(other.inner))
     }

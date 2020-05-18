@@ -36,6 +36,7 @@ default = ["proc-macro"]
 # of a token.
 span-locations = []
 
+# Span::mixed_site, Span::resolved_at, and Span::located_at. Requires rustc 1.45+
 hygiene = []
 
 # This feature no longer means anything.
