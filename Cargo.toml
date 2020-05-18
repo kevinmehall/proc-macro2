@@ -36,6 +36,8 @@ default = ["proc-macro"]
 # of a token.
 span-locations = []
 
+hygiene = []
+
 # This feature no longer means anything.
 nightly = []
 

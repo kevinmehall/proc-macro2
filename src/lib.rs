@@ -348,6 +348,18 @@ impl Span {
         Span::_new(imp::Span::call_site())
     }
 
+    /// The span located at the invocation of the procedural macro, but with
+    /// local variables, labels, and `$crate` resolved at the definition site
+    /// of the macro.
+    ///
+    /// `macro_rules` behaves like this in terms of hygiene.
+    ///
+    /// This method requires the `"hygiene"` feature to be enabled.
+    #[cfg(hygiene)]
+    pub fn mixed_site() -> Span {
+        Span::_new(imp::Span::mixed_site())
+    }
+
     /// A span that resolves at the macro definition site.
     ///
     /// This method is semver exempt and not exposed by default.
